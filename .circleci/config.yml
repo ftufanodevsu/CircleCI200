@@ -3,6 +3,13 @@ version: 2.1
 orbs:
   node: circleci/node@4.1.0
 
+nightly:
+     triggers:
+       - schedule:
+           - cron: "0 7 * * *"
+           - cron: "0 20 * * *"
+
+
 jobs:
 
   build:
@@ -15,3 +22,27 @@ jobs:
           command: chmod +x mvnw
       - run:
           command: ./mvnw -Dmaven.test.skip=true package
+
+  test_1:
+    docker:
+      - image: circleci/openjdk:stretch
+    steps:
+      - checkout
+      - run:
+          name: Giving permissions
+          command: chmod +x mvnw
+      - run:   
+          command: ./mvnw test
+      - slack/status:
+                failure_message: Test-1 Failed
+                success_message: Test-1 Success
+
+workflows:
+  version: 2.1
+
+   build-test:
+    jobs:
+      - build:
+          - test_1:
+          requires:
+            - build
