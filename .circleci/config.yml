@@ -40,7 +40,7 @@ jobs:
 workflows:
   version: 2.1
 
-   build-test:
+    build-test:
     jobs:
       - build:
           - test_1:
