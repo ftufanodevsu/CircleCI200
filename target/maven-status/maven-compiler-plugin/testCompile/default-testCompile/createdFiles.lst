@@ -1,0 +1,15 @@
+alerts\ContextMenuTest.class
+forgotpassword\ForgotPasswordTest.class
+javascript\JavaScriptTests.class
+dropdown\DropdownTest.class
+login\LoginTest.class
+base\BaseTest.class
+frames\NestedFramesTest.class
+navigation\NavigationTest.class
+alerts\FileUploadTest.class
+alerts\AlertsTest.class
+slider\HorizontalSliderTest.class
+wait\WaitTests.class
+frames\FrameTest.class
+hover\HoverTest.class
+keys\KeysTest.class
