@@ -8,10 +8,10 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:stretch
-      steps:
+    steps:
       - checkout
       - run:
           name: Giving permissions
-          commands: chmod +x mvnw
+          command: chmod +x mvnw
       - run:
-          command:./mvnw -Dmaven.test.skip=true package
+          command: ./mvnw -Dmaven.test.skip=true package
